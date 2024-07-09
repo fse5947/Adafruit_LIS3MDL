@@ -47,7 +47,6 @@ bool Adafruit_LIS3MDL::begin_I2C(uint8_t i2c_address, TwoWire *wire) {
 
   spi_dev = NULL;
   i2c_dev = new Adafruit_I2CDevice(i2c_address, wire);
-
   if (!i2c_dev->begin()) {
     return false;
   }
@@ -61,7 +60,7 @@ bool Adafruit_LIS3MDL::begin_I2C(uint8_t i2c_address, TwoWire *wire) {
  *    @param  frequency The SPI bus frequency
  *    @return True if initialization was successful, otherwise false.
  */
-boolean Adafruit_LIS3MDL::begin_SPI(uint8_t cs_pin, SPIClass *theSPI,
+bool Adafruit_LIS3MDL::begin_SPI(uint8_t cs_pin, SPIClass *theSPI,
                                     uint32_t frequency) {
   if (i2c_dev)
     delete i2c_dev;
